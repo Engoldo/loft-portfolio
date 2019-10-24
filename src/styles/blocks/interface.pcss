@@ -3,6 +3,12 @@
     font-size: 36px;
     font-weight: 700;
     color: #2b3948;
+    @include desktop {
+      font-size: 30px;
+    }
+    @include tablets {
+      font-size: 24px;
+    }
 
     &_light {
       color: #ffffff;
@@ -13,20 +19,28 @@
     font-weight: 600;
     font-size: 16px;
     opacity: 0.5;
+    @include desktop {
+      font-size: 14px;
+    }
   }
 }
 
 .main-slide {
   position: relative;
-  background: #090224 url(../images/content/fest.jpg) center no-repeat;
+  /* background: #090224 url(../images/content/fest.jpg) center no-repeat; */
+  background: #06001e;
   background-size: cover;
+  z-index: 1;
+  @include tablets {
+    background: #090224 url(../images/content/fest.jpg) 70% 45% no-repeat;
+  }
 
   &__triangle {
     position: absolute;
     top: 100%;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 185px;
   }
 }
 
@@ -35,10 +49,30 @@
   padding: 140px 0;
   background: #090224;
   z-index: 1;
+  @include desktopHd {
+    padding-bottom: 165px;
+  }
+  @include desktop {
+    padding-top: 123px;
+    padding-bottom: 112px;
+  }
+  @include tablets {
+    padding-top: 89px;
+    padding-bottom: 112px;
+  }
 
   &__child {
     &:not(:first-child) {
       margin-top: 175px;
+      @include desktopHd {
+        margin-top: 192px;
+      }
+      @include desktop {
+        margin-top: 136px;
+      }
+      @include tablets {
+        margin-top: 142px;
+      }
     }
   }
 
@@ -63,6 +97,9 @@
     max-width: 100%;
     height: 100%;
     z-index: -1;
+    @include desktop {
+      background-position: 45% center;
+    }
   }
 }
 
@@ -77,9 +114,15 @@
   color: #ffffff;
   transition: 0.2s;
   font-weight: 600;
+  @include desktop {
+    font-size: 14px;
+  }
 
   &__list {
     display: flex;
+    @include desktop {
+      flex-wrap: wrap;
+    }
   }
 
   &__link {
@@ -111,7 +154,10 @@
 
   &__child {
     &:not(:last-child) {
-      margin-right: 44px;
+      margin-right: 2.88rem;
+      @include desktop {
+        margin-right: 42px;
+      }
     }
   }
 
@@ -135,6 +181,10 @@
     height: 25px;
     fill: #524c5d;
     transition: 0.3s;
+    @include desktop {
+      width: 27px;
+      height: 27px;
+    }
   }
 }
 
@@ -153,12 +203,21 @@
   position: relative;
   height: 100%;
   width: 100%;
+  @include tablets {
+    height: 30px;
+  }
 
   &__child {
     display: block;
     width: 100%;
     height: 185px;
     fill: #0a001d;
+    @include desktop {
+      height: 77px;
+    }
+    @include tablets {
+      height: 30px;
+    }
   }
 }
 
@@ -190,6 +249,12 @@
 
     & + .form__input {
       margin-top: 17px;
+      @include desktop {
+        margin-top: 10px;
+      }
+    }
+    @include desktop {
+      font-size: 14px;
     }
   }
 
@@ -209,6 +274,12 @@
   padding-top: 8px;
   padding-bottom: 15px;
   resize: none;
+  @include desktop {
+    height: 75px;
+  }
+  @include tablets {
+    height: 98px;
+  }
 }
 
 .form {
@@ -220,6 +291,16 @@
 
   &__child {
     flex-basis: 47%;
+    @include desktop {
+      flex-basis: 48%;
+    }
+    @include tablets {
+      flex-basis: 100%;
+
+      &:nth-child(2) {
+        margin-top: 35px;
+      }
+    }
 
     &_full {
       flex-basis: 100%;
@@ -227,6 +308,12 @@
 
     &:nth-child(n+3) {
       margin-top: 37px;
+      @include desktop {
+        margin-top: 33px;
+      }
+      @include tablets {
+        margin-top: 46px;
+      }
     }
   }
 
@@ -246,6 +333,15 @@
   &__btn {
     width: 350px;
     margin-top: 55px;
+    @include desktop {
+      margin-top: 26px;
+      margin-left: 175px;
+    }
+    @include tablets {
+      width: 100%;
+      margin: 0;
+      margin-top: 25px;
+    }
   }
 }
 
@@ -263,6 +359,9 @@
   text-transform: uppercase;
   color: #ffffff;
   transition: 0.3s;
+  @include tablets {
+    height: 60px;
+  }
 
   &:hover,
   &:focus {
@@ -294,5 +393,138 @@
   &:not(.slider__button_disabled):active {
     transition: 0.3s;
     opacity: 0.5;
+  }
+}
+
+.nav-bar {
+  position: relative;
+  width: 24px;
+  height: 20px;
+
+  &__child,
+  &__child:after,
+  &__child:before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    display: inline-block;
+    width: 100%;
+    height: 4px;
+    background: #ffffff;
+  }
+
+  &__child {
+    &:after {
+      transform: translateY(-10px);
+    }
+
+    &:before {
+      transform: translateY(6px);
+    }
+  }
+}
+
+.parallax {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+  @include tablets {
+    display: none;
+  }
+
+  &__layer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    will-change: transform;
+
+    &:nth-child(1) {
+      & .parallax__img {
+        object-fit: cover;
+        width: 100%;
+        height: 805px;
+        transform: translateY(-50%);
+      }
+    }
+
+    &:nth-child(2) {
+      & .parallax__img {
+        top: 320px;
+      }
+    }
+
+    &:nth-child(3) {
+      & .parallax__img {
+        top: 250px;
+        @include desktop {
+          top: 310px;
+        }
+      }
+    }
+
+    &:nth-child(4) {
+      & .parallax__img {
+        top: 400px;
+        @include desktop {
+          top: 350px;
+        }
+      }
+    }
+
+    &:nth-child(5) {
+      & .parallax__img {
+        bottom: 50%;
+        transform: translateY(70%);
+      }
+    }
+
+    &:nth-child(6) {
+      & .parallax__img {
+        bottom: 0;
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+  }
+}
+
+.close {
+  position: relative;
+  display: inline-block;
+  width: 25px;
+  height: 25px;
+
+  &:after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    display: inline-block;
+    width: 25px;
+    height: 5px;
+    background: #414c63;
+    transform: translateY(-50%) rotate(45deg);
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0%;
+    display: inline-block;
+    width: 25px;
+    height: 5px;
+    background: #414c63;
+    transform: translateY(-50%) rotate(-45deg);
   }
 }
