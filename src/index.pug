@@ -85,14 +85,14 @@ html(lang="en")
                 +image('guitar.png','skills__guitar','Гитара')
               +image('skills-bg.png','skills__bg',"Граффити")
             #skills-component
-    
+
     section.portfolio
       .container
         .portfolio__wrap
           span.portfolio__title.section__title Мои работы
           .portfolio__slider
             #slider-component
-    
+
     .add-slide
       .add-slide__child            
         section.feedback#reviews
@@ -113,15 +113,15 @@ html(lang="en")
                       ['Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах','fb-2.png','Владимир Сабанцев','Преподаватель']
                     ]
                   each item in feedback
-                      .slider-feedback__child.carousel-cell
-                        p.slider-feedback__quote #{item[0]}
-                        .slider-feedback__info
-                          .slider-feedback__info-avatar
-                            +image(`${item[1]}`,'slider-feedback__image',`Фото: ${item[1]}`)
-                          .slider-feedback__info-text
-                            span.slider-feedback__info-name #{item[2]}
-                            span.slider-feedback__info-post #{item[3]}
-      
+                    .slider-feedback__child.carousel-cell
+                      p.slider-feedback__quote #{item[0]}
+                      .slider-feedback__info
+                        .slider-feedback__info-avatar
+                          +image(`${item[1]}`,'slider-feedback__image',`Фото: ${item[1]}`)
+                        .slider-feedback__info-text
+                          span.slider-feedback__info-name #{item[2]}
+                          span.slider-feedback__info-post #{item[3]}
+
       .add-slide__child
         section.contacts
           .container
@@ -135,19 +135,25 @@ html(lang="en")
                       .form__input
                         input(type="text" id="fullname" name="fullname" required).input
                         +icon('user','form__input-icon')
+                        .form__error
+                          span Какая то ошибка
                     .form__child 
                       label(for="email").input__label Введите ваш email
                       .form__input
                         input(type="text" id="email" name="email" required).input
                         +icon('envelope','form__input-icon')
+                        .form__error
+                          span Какая то ошибка
                     .form__child.form__child_full
                       label(for="message").input__label Сообщение к письму
                       .form__input
                         textarea(type="text" id="message" name="message").input.textarea 
                         +icon('message','form__input-icon')
+                        .form__error
+                          span Какая то ошибка
                   .form__btn
                     input(type="submit" value="Отправить").btn
-   
+
     footer.footer
       .container
         .footer__wrap
