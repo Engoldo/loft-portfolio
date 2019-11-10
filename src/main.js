@@ -8,3 +8,4 @@ import "./scripts/reviews.js";
 import "./scripts/parallax.js";
 import "./scripts/works";
 import "./scripts/burger.js";
+import "./scripts/scroll.js";
