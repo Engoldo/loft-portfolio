@@ -96,6 +96,9 @@
     &_before {
       stroke: #eaeaea;
       stroke-width: 10px;
+      @include tablets {
+        stroke-width: 10PX;
+      }
     }
 
     &_after {
@@ -104,6 +107,9 @@
       stroke-dashoffset: 400;
       animation: fill 100s linear infinite;
       animation-play-state: paused;
+      @include tablets {
+        stroke-width: 20PX;
+      }
     }
   }
 }
