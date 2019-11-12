@@ -23,7 +23,7 @@ export default {
         async logout({ commit }) {
             const response = await this.$axios.post('/logout');
             commit('CLEAR_USER');
-            location.href = '/';
+            location.href = '/loft-portfolio/';
             return response;
         }
     }
