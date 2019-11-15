@@ -88,15 +88,18 @@
     background: transparent;
   }
 
+  &__button:hover {
+    color: #008bff;
+    & > .scroll {
+      fill: #008bff;
+    }
+  }
+
   &__prompt {
     margin-right: 10px;
     font-size: 18px;
     font-weight: 700;
     color: #ffffff;
-
-    &:hover {
-      color: #008bff;
-    }
   }
 
   &__icon {
